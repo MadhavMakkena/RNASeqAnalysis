@@ -11,6 +11,7 @@ volcano_plot_subset <- function(result, pval, log2FC, subset_file_location, subs
   points(abs(result_up$stat)~result_up$log2FoldChange, pch=16, cex=0.6, col="gray60")
   points(abs(result_down$stat)~result_down$log2FoldChange, pch=16, cex=0.6, col="gray60")
   points(abs(result_subset$stat)~result_subset$log2FoldChange, pch=16, cex=0.6, col="darkgreen")
+  text(abs(result_subset$stat)~result_subset$log2FoldChange, labels=rownames(result_subset), cex=0.75, font=2, pos=4, col="orange")
   abline(h=min(abs(subset(result, pvalue<pval)$stat)), v=c(log2FC,-log2FC), lty=2, col="darkseagreen4")
   text(-22,140, (nrow(result_down)), col = "Blue", pos = 4, cex = .85)
   text(-22,130, "Down", col = "Blue", pos = 4, cex = .85)

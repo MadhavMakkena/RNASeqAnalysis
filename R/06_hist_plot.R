@@ -8,7 +8,7 @@ hist_plot_2x3 <- function(file_location, file_name){
   hist_gene_count_min <- (min(Count_subset_hist_genes)*.8)
   par(mfrow=c(2,3))
   for (gene in hist_genes){
-    plotCounts(DESeq, gene=gene, intgroup="SampleType", transform=F, ylim=c(hist_gene_count_min, hist_gene_count_max))
+    DESeq2::plotCounts(DESeq, gene=gene, intgroup="SampleType", transform=F, ylim=c(hist_gene_count_min, hist_gene_count_max))
   }
 }
 
@@ -21,6 +21,6 @@ hist_plot_3x4 <- function(file_location, file_name){
   hist_gene_count_min <- (min(Count_subset_hist_genes)*.8)
   par(mfrow=c(3,4))
   for (gene in hist_genes){
-    plotCounts(DESeq, gene=gene, intgroup="SampleType", transform=F, ylim=c(hist_gene_count_min, hist_gene_count_max))
+    DESeq2::plotCounts(DESeq, gene=gene, intgroup="SampleType", transform=F, ylim=c(hist_gene_count_min, hist_gene_count_max))
   }
 }
